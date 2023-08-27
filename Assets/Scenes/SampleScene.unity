@@ -1095,6 +1095,12 @@ MonoBehaviour:
   FPCamera: {fileID: 781261399}
   range: 100
   damage: 25
+  muzzleFlashVFX: {fileID: 1128893916}
+--- !u!198 &1128893916 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 3090022888983512711, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+  m_PrefabInstance: {fileID: 1128893911}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1190008634
 GameObject:
   m_ObjectHideFlags: 0
