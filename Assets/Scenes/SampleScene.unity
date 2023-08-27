@@ -1094,6 +1094,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FPCamera: {fileID: 781261399}
   range: 100
+  damage: 25
 --- !u!1 &1190008634
 GameObject:
   m_ObjectHideFlags: 0
@@ -1238,6 +1239,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1508446234}
   m_CullTransparentMesh: 1
+--- !u!1 &2026546983 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1915512599633845907, guid: 94bf6199cd7e81f44bc359794abb078b, type: 3}
+  m_PrefabInstance: {fileID: 9049785162476255469}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2026546990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2026546983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c7d3dfe41808624eae9e70897460269, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitPoints: 100
 --- !u!1001 &9049785162476255469
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1313,5 +1332,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1915512599633845907, guid: 94bf6199cd7e81f44bc359794abb078b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2026546990}
   m_SourcePrefab: {fileID: 100100000, guid: 94bf6199cd7e81f44bc359794abb078b, type: 3}
