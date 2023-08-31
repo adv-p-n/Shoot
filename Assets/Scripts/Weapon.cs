@@ -8,22 +8,32 @@ public class Weapon : MonoBehaviour
     [SerializeField] Camera FPCamera;
     [SerializeField] float range = 100f;
     [SerializeField] float damage = 25f;
+    [SerializeField] float shootDelay = 0.2f;
     [SerializeField] ParticleSystem muzzleFlashVFX;
     [SerializeField] GameObject hitVFX;
+    [SerializeField] Ammo ammoSlot;
+
+    bool canShoot = true;
     
     void Update()
     {
-        if(Input.GetButtonDown("Fire1"))
+        if(Input.GetMouseButtonDown(0) && canShoot)
         {
-            Shoot();
+            StartCoroutine(Shoot());
         }
     }
 
-    void Shoot()
+    IEnumerator Shoot()
     {
-        MuzzleFlashFX();
-        ProcessRaycast();
-
+        canShoot= false;
+        if (ammoSlot.GetAmmoAmount() > 0)
+        {
+            MuzzleFlashFX();
+            ProcessRaycast();
+            ammoSlot.ReduceAmmoAmount();
+        }
+        yield return new WaitForSecondsRealtime(shootDelay);
+        canShoot= true;
     }
 
      void MuzzleFlashFX()
@@ -38,7 +48,10 @@ public class Weapon : MonoBehaviour
         {
             CreateHitVFX(hit);
             EnemyHealth enemyHealth = hit.transform.GetComponent<EnemyHealth>();
-            if (enemyHealth) { enemyHealth.ReduceHealth(damage); }
+            if (enemyHealth) 
+            {
+                enemyHealth.ReduceHealth(damage);
+            }
         }
         else
         {
