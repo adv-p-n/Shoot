@@ -6,17 +6,17 @@ public class EnemyAttack : MonoBehaviour
 {
     PlayerHealth target;
     [SerializeField] int damage = 40;
-    PlayerHealth playerHealth;
+    
 
     private void Awake()
     {
-        playerHealth = FindObjectOfType<PlayerHealth>();
+        target = FindObjectOfType<PlayerHealth>();
     }
 
     public void AttackHitEvent()
     {
         if(target == null) { return; }
-        playerHealth.DamagePlayer(damage);
+        target.DamagePlayer(damage);
         Debug.Log("Aarg");
     }
 }

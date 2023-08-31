@@ -9,6 +9,7 @@ public class SessionManager : MonoBehaviour
     {
         int sceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(sceneIndex);
+        Time.timeScale = 1.0f;
     }
     public void QuitAppication()
     {
