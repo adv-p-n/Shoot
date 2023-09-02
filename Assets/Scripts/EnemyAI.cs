@@ -11,19 +11,29 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] float lookSpeed = 10f;
     NavMeshAgent navMeshAgent;
     Animator myAnimator;
+    EnemyHealth enemyHealth;
     float targetDistance;
     bool isProvoked = false;
     void Start()
     {
         myAnimator= GetComponent<Animator>();
         navMeshAgent= GetComponent<NavMeshAgent>();
+        enemyHealth= GetComponent<EnemyHealth>();
     }
 
-    // Update is called once per frame
+
     void Update()
     {
-        MoveToTarget();
+        if (enemyHealth.GetIsDead())
+        {
+            enabled = false;
+            navMeshAgent.enabled = false;
 
+        }
+        else
+        {
+            MoveToTarget();
+        }
     }
 
      void MoveToTarget()
