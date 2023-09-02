@@ -186,6 +186,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86e1040a3df481a44be8e588fc6c8336, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentWeaponIndex: 0
 --- !u!1 &8686515896374880766
 GameObject:
   m_ObjectHideFlags: 0
@@ -227,7 +228,7 @@ Transform:
   - {fileID: 7968999779177115515}
   - {fileID: 8228749243165877387}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!143 &6928125240746412075
 CharacterController:
@@ -267,8 +268,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55919ac34a26952479f3fc91f777b2fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveSpeed: 4
-  SprintSpeed: 6
+  MoveSpeed: 7
+  SprintSpeed: 10
   RotationSpeed: 1
   SpeedChangeRate: 10
   JumpHeight: 1.2
@@ -456,7 +457,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a3b35f2d4c272943998096356342495, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ammoAmount: 5
+  slots:
+  - ammotype: 0
+    ammoAmount: 10
+  - ammotype: 1
+    ammoAmount: 7
+  - ammotype: 2
+    ammoAmount: 3
 --- !u!1001 &101260182049493501
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -515,11 +522,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2337074158997199750, guid: c26fe672fece6a641a2c1613a700b870, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2337074158999389510, guid: c26fe672fece6a641a2c1613a700b870, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6423897840422399288, guid: c26fe672fece6a641a2c1613a700b870, type: 3}
+      propertyPath: range
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 6423897840422399288, guid: c26fe672fece6a641a2c1613a700b870, type: 3}
+      propertyPath: FPCamera
+      value: 
+      objectReference: {fileID: 1344798374849748180}
+    - target: {fileID: 6423897840422399288, guid: c26fe672fece6a641a2c1613a700b870, type: 3}
+      propertyPath: ammoSlot
+      value: 
+      objectReference: {fileID: 4776183179770084740}
+    - target: {fileID: 6423897840422399288, guid: c26fe672fece6a641a2c1613a700b870, type: 3}
+      propertyPath: ammoType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6423897840422399288, guid: c26fe672fece6a641a2c1613a700b870, type: 3}
+      propertyPath: shootDelay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7722897931051452018, guid: c26fe672fece6a641a2c1613a700b870, type: 3}
+      propertyPath: zoomInFOV
+      value: 35
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -658,6 +689,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6423897840422399288, guid: ada2587319194f542957a8c2ae277cb9, type: 3}
+      propertyPath: range
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 6423897840422399288, guid: ada2587319194f542957a8c2ae277cb9, type: 3}
+      propertyPath: damage
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 6423897840422399288, guid: ada2587319194f542957a8c2ae277cb9, type: 3}
       propertyPath: FPCamera
       value: 
       objectReference: {fileID: 1344798374849748180}
@@ -737,6 +776,34 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2337074158997199750, guid: cb8959b1194f60a41acdc813868e84ca, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6423897840422399288, guid: cb8959b1194f60a41acdc813868e84ca, type: 3}
+      propertyPath: range
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 6423897840422399288, guid: cb8959b1194f60a41acdc813868e84ca, type: 3}
+      propertyPath: damage
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 6423897840422399288, guid: cb8959b1194f60a41acdc813868e84ca, type: 3}
+      propertyPath: FPCamera
+      value: 
+      objectReference: {fileID: 1344798374849748180}
+    - target: {fileID: 6423897840422399288, guid: cb8959b1194f60a41acdc813868e84ca, type: 3}
+      propertyPath: ammoSlot
+      value: 
+      objectReference: {fileID: 4776183179770084740}
+    - target: {fileID: 6423897840422399288, guid: cb8959b1194f60a41acdc813868e84ca, type: 3}
+      propertyPath: ammoType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6423897840422399288, guid: cb8959b1194f60a41acdc813868e84ca, type: 3}
+      propertyPath: shootDelay
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7722897931051452018, guid: cb8959b1194f60a41acdc813868e84ca, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
