@@ -15,6 +15,10 @@ public class WeaponZoom : MonoBehaviour
     FirstPersonController fpController;
 
     bool zoomedIn = false;
+    private void OnDisable()
+    {
+        WeaponZoomOut();
+    }
 
     void Start()
     {

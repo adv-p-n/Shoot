@@ -8,6 +8,7 @@ public class DeathHandler : MonoBehaviour
     StarterAssets.StarterAssetsInputs starterAssetsInputs;
     GameObject player;
     WeaponSwitcher weaponSwitcher;
+    WeaponZoom weaponZoom;
 
     void Start()
     {
@@ -15,6 +16,7 @@ public class DeathHandler : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         starterAssetsInputs = player.GetComponent<StarterAssets.StarterAssetsInputs>();
         weaponSwitcher = FindObjectOfType<WeaponSwitcher>();
+        weaponZoom = FindObjectOfType<WeaponZoom>();
     }
 
     public void HandleDeath()
@@ -22,6 +24,7 @@ public class DeathHandler : MonoBehaviour
         gameOverCanvas.enabled = true;
         Time.timeScale = 0;
         weaponSwitcher.enabled = false;
+        weaponZoom.enabled = false;
         starterAssetsInputs.cursorLocked = false;
         starterAssetsInputs.cursorInputForLook = false;
         starterAssetsInputs.SetCursorState(starterAssetsInputs.cursorLocked);
