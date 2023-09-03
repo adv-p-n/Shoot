@@ -11338,6 +11338,10 @@ PrefabInstance:
       propertyPath: ammoType
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4903066703455512266, guid: e88bdec2fe81e764b9514ffc43417cf5, type: 3}
+      propertyPath: ammoAmount
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 5409655607974656076, guid: e88bdec2fe81e764b9514ffc43417cf5, type: 3}
       propertyPath: m_Radius
       value: 1
@@ -11345,7 +11349,10 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 7507455292616884723, guid: e88bdec2fe81e764b9514ffc43417cf5, type: 3}
     - {fileID: 1176908991598378369, guid: e88bdec2fe81e764b9514ffc43417cf5, type: 3}
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 8109692281763963976, guid: e88bdec2fe81e764b9514ffc43417cf5, type: 3}
+    - {fileID: 2484451230884534795, guid: e88bdec2fe81e764b9514ffc43417cf5, type: 3}
+    - {fileID: 4374562204337552991, guid: e88bdec2fe81e764b9514ffc43417cf5, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 3413029499676319981, guid: e88bdec2fe81e764b9514ffc43417cf5, type: 3}
       insertIndex: -1
