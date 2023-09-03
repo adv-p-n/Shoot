@@ -17,6 +17,7 @@ public class EnemyAttack : MonoBehaviour
     {
         if(target == null) { return; }
         target.DamagePlayer(damage);
+        target.GetComponent<DisplayDamage>().DisplayDamageCanvas();
         Debug.Log("Aarg");
     }
 }
